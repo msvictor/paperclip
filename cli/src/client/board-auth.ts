@@ -174,15 +174,18 @@ export function openUrl(url: string): boolean {
   try {
     if (platform === "darwin") {
       const child = spawn("open", [url], { detached: true, stdio: "ignore" });
+      child.on("error", () => {});
       child.unref();
       return true;
     }
     if (platform === "win32") {
       const child = spawn("cmd", ["/c", "start", "", url], { detached: true, stdio: "ignore" });
+      child.on("error", () => {});
       child.unref();
       return true;
     }
     const child = spawn("xdg-open", [url], { detached: true, stdio: "ignore" });
+    child.on("error", () => {});
     child.unref();
     return true;
   } catch {

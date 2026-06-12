@@ -1,0 +1,26 @@
+{
+  "name": "github-pr-agent-tool",
+  "version": "1.0.0",
+  "description": "PR-only Git/GitHub tool for AI agents. Structurally prevents direct pushes to default branches.",
+  "type": "module",
+  "bin": {
+    "git-pr-tool": "scripts/git-pr-tool.ts"
+  },
+  "scripts": {
+    "tool": "tsx scripts/git-pr-tool.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "cerrado-tech": {
+    "ok": true,
+    "profile": "Victor Gabriel",
+    "persona": "board",
+    "apiBase": "http://localhost:3100",
+    "companyId": "d09deba4-0a1a-43ee-aa5b-d244e27915c3",
+    "key": {
+      "id": "4b24bd91-42ff-4013-8a72-b150160de5c1",
+      "name": "cli-board-2026-06-10T04:12:27.053Z",
+      "createdAt": "2026-06-10T04:12:27.064Z",
+      "token": "pcp_board_ccede62d042f4b9495af779e7295927b7c5325d181010bc4",
+      "expiresAt": "2026-07-10T04:12:27.063Z"
+    },
+    "exports": "export PAPERCLIP_API_URL='http://localhost:3100'\nexport PAPERCLIP_COMPANY_ID='d09deba4-0a1a-43ee-aa5b-d244e27915c3'\nexport PAPERCLIP_API_KEY='pcp_board_ccede62d042f4b9495af779e7295927b7c5325d181010bc4'",
+    "agents": [
+      {
+        "id": "635a0cbf-6911-4e77-b61a-1c8849fabc7d",
+        "name": "Junin Pleno"
+      },
+      {
+        "id": "51d4c9b9-07d3-45bf-a06e-d17d8cd66a01",
+        "name": "Especialisto"
+      },
+      {
+        "id": "0270eb2f-ae8d-4a68-89fb-03ff3720f1c1",
+        "name": "SIOWL"
+      },
+      {
+        "id": "2a040084-73ae-47a0-8311-467ec1d321b4",
+        "name": "TecLidio"
+      }
+    ]
+  }
+}
+// https://github.com/sandeco/reversa
+
+// obsidian -- ver isso
