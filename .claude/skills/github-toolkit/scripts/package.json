@@ -1,0 +1,16 @@
+{
+  "name": "github-toolkit",
+  "version": "1.1.0",
+  "description": "Decoupled GitHub auth agent + generalist git tools, with a single-JSON-object CLI.",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "cli": "tsx src/cli.ts",
+    "example": "tsx src/example.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.4.0"
+  }
+}
