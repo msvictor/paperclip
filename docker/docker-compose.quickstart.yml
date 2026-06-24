@@ -23,3 +23,4 @@ services:
     volumes:
       - "${PAPERCLIP_DATA_DIR:-../data/docker-paperclip}:/paperclip"
       - "${SKILLS_DIR:-./../.claude/skills}:/skills:ro"
+      - "${OBSIDIAN_VAULT_DIR:-${HOME}/Documents/Obsidian/paperclip-brain}:/obsidian:rw"
