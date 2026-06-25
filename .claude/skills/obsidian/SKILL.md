@@ -8,23 +8,19 @@ description: >
   Paperclip issue status. The vault is a live bridge between operator knowledge
   and agent execution — always check it before assuming you have no context.
 ---
-
 # Obsidian Vault
 
-The vault at `/obsidian/` is a shared Markdown knowledge base accessible to all
-agents and to the operator through the Obsidian app on their Mac. Changes written
-by an agent appear immediately in the operator's Obsidian. Notes written by the
-operator appear immediately to agents.
+Vault at `/obsidian/` — shared Markdown knowledge base. All agents + operator access via Obsidian app on Mac. Agent writes appear immediately to operator; operator writes appear immediately to agents.
 
 **Vault root inside container:** `/obsidian/`
 
-For the full folder-by-folder reference, load `references/vault-layout.md`.
+Full folder reference: load `references/vault-layout.md`.
 
 ---
 
 ## Before starting any task
 
-Always check the vault for existing context before reading source code:
+Check vault before reading source code:
 
 ```bash
 # 1. Check for project-specific orientation
@@ -44,16 +40,13 @@ ls /obsidian/03-reversa/<project-name>/ 2>/dev/null && echo "Reversa specs found
 ls /obsidian/04-agent-notes/
 ```
 
-If a spec in `01-specs/` directly covers your task, treat its acceptance criteria
-as your definition of done. If you find a Reversa analysis in `03-reversa/`, read
-the relevant module spec files before exploring raw source code.
+Spec in `01-specs/` covering task → treat acceptance criteria as definition of done. Reversa analysis in `03-reversa/` → read module spec files before exploring raw source.
 
 ---
 
 ## Writing a progress note
 
-Write a progress note at meaningful milestones — after completing a phase, when
-blocked, or when handing off to another agent. Do not write on every heartbeat.
+Write at meaningful milestones — phase complete, blocked, or handoff. Not every heartbeat.
 
 ```bash
 # File path pattern:
@@ -91,14 +84,13 @@ None.
 EOF
 ```
 
-Follow the full conventions in `/obsidian/04-agent-notes/_conventions.md`.
+Full conventions: `/obsidian/04-agent-notes/_conventions.md`.
 
 ---
 
 ## After a Reversa analysis
 
-Once `/reversa` completes and `_reversa_sdd/` is populated, copy the specs into
-the vault so other agents and the operator can access them:
+After `/reversa` completes and `_reversa_sdd/` populated, copy specs into vault:
 
 ```bash
 PROJECT_NAME="voo-social-pro"
@@ -108,16 +100,13 @@ cp -r _reversa_sdd/. "$DEST/"
 echo "Reversa specs copied to $DEST"
 ```
 
-Then write a `type: reversa` progress note in `04-agent-notes/` pointing to the
-new location (see conventions). Attach the tarball as a Paperclip artifact using
-the paperclip skill.
+Write `type: reversa` progress note in `04-agent-notes/` pointing to new location (see conventions). Attach tarball as Paperclip artifact using paperclip skill.
 
 ---
 
 ## Generating the dashboard
 
-When asked to generate or refresh the dashboard, call the Paperclip API and write
-the result to `/obsidian/00-dashboard/status.md`:
+Write result to `/obsidian/00-dashboard/status.md`:
 
 ```bash
 # Requires PAPERCLIP_API_URL and PAPERCLIP_API_KEY to be set
@@ -155,14 +144,13 @@ _Generated $(date '+%Y-%m-%d %H:%M')_
 DASHBOARD
 ```
 
-Replace the comment placeholders with the actual data from the API response.
-The full API reference is in the paperclip skill at `skills/paperclip/references/api-reference.md`.
+Replace comment placeholders with actual API response data. Full API reference: `skills/paperclip/references/api-reference.md`.
 
 ---
 
 ## Writing a spec (on behalf of the operator)
 
-If asked to draft a spec (e.g. for a new feature), write it to `01-specs/`:
+Draft spec → write to `01-specs/`:
 
 ```bash
 # Use the template as the base
@@ -170,7 +158,7 @@ cp /obsidian/01-specs/_template.md /obsidian/01-specs/<slug>.md
 # Then edit the file with the spec content
 ```
 
-Name the file after the feature in lowercase kebab-case.
+Name file after feature in lowercase kebab-case.
 
 ---
 
@@ -179,5 +167,5 @@ Name the file after the feature in lowercase kebab-case.
 - **Never write secrets, tokens, or API keys into any vault file.**
 - **Never create files outside the four numbered top-level folders** (except README.md at root).
 - **Do not delete files written by the operator** in `01-specs/` or `02-projects/`.
-- **Always use the frontmatter template** when writing any note — this is what makes notes queryable in Obsidian's Dataview plugin.
-- The vault is on a macOS filesystem. File names are case-insensitive; use lowercase to avoid collisions.
+- **Always use the frontmatter template** when writing any note — makes notes queryable in Obsidian's Dataview plugin.
+- Vault on macOS filesystem. File names case-insensitive; use lowercase to avoid collisions.
