@@ -1,9 +1,9 @@
 # Vault Layout Reference
 
-Full reference for every folder in the `paperclip-brain` Obsidian vault.
+Full reference for every folder in the obsidian vault.
 
 **Container path:** `/obsidian/`
-**macOS path:** `~/Documents/Obsidian/paperclip-brain/`
+**macOS path:** `~/Documents/obsidian/`
 
 ---
 
@@ -34,6 +34,7 @@ read these before starting a task to understand what is expected of them.
 | File | Purpose |
 |------|---------|
 | `_template.md` | Starting template for new specs |
+| `ai-repo-standards.md` | AI-readability standards reference for all projects |
 | `<slug>.md` | One file per spec topic |
 
 **Naming:** lowercase kebab-case, e.g. `auth-refresh-flow.md`, `queue-jobs-v2.md`.
@@ -64,7 +65,9 @@ repository info, active agents, and key directory layout.
 ```
 02-projects/
 └── voo-social-pro/
-    └── README.md
+    ├── README.md
+    ├── ux-roadmap.md
+    └── ai-standards-roadmap.md
 ```
 
 **Adding a new project:** Create `02-projects/<project-slug>/README.md` following
