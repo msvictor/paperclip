@@ -31,6 +31,8 @@ Always use these IDs in sync commands to avoid slug ambiguity:
 | `caveman` | `48bbda43-4b46-4595-b9fe-160f51594aed` | Output compression (~65%) |
 | `caveman-compress` | `3d8e946b-d82e-4390-acf2-5437d8436b18` | Input compression of SKILL.md files (~46%) |
 | `cavecrew` | `434956ee-b8f2-4a30-976e-173b9bd2646f` | Token-efficient subagents (Claude only) |
+| `ai-repo-standards` | `e5a15949-d885-450e-9f9d-0366494759dd` | AI-readability standards: folder structure, AGENTS.md, testing, git hygiene, RAG |
+| `frontend-style` | `09c0c9d3-0001-41f3-9cd2-9a8751358671` | React/TS code style + TailwindCSS 4 + shadcn/ui + TanStack |
 | `github-toolkit` | slug | GitHub PR-first workflow |
 | `github-pr-workflow` | slug | PR conventions |
 | `reversa` | slug | Codebase reverse-engineering |
@@ -49,6 +51,21 @@ pnpm paperclipai skills agent sync <NEW_AGENT_ID> \
   --company-id d09deba4-0a1a-43ee-aa5b-d244e27915c3 \
   --skill github-toolkit \
   --skill github-pr-workflow \
+  --skill e5a15949-d885-450e-9f9d-0366494759dd \
+  --skill 48bbda43-4b46-4595-b9fe-160f51594aed \
+  --skill 3d8e946b-d82e-4390-acf2-5437d8436b18 \
+  --skill 434956ee-b8f2-4a30-976e-173b9bd2646f
+```
+
+For a frontend agent (add frontend-style):
+
+```bash
+pnpm paperclipai skills agent sync <NEW_AGENT_ID> \
+  --company-id d09deba4-0a1a-43ee-aa5b-d244e27915c3 \
+  --skill github-toolkit \
+  --skill github-pr-workflow \
+  --skill e5a15949-d885-450e-9f9d-0366494759dd \
+  --skill 09c0c9d3-0001-41f3-9cd2-9a8751358671 \
   --skill 48bbda43-4b46-4595-b9fe-160f51594aed \
   --skill 3d8e946b-d82e-4390-acf2-5437d8436b18 \
   --skill 434956ee-b8f2-4a30-976e-173b9bd2646f
@@ -65,6 +82,8 @@ pnpm paperclipai skills agent sync <NEW_AGENT_ID> \
   --skill github-pr-workflow \
   --skill reversa \
   --skill obsidian \
+  --skill e5a15949-d885-450e-9f9d-0366494759dd \
+  --skill 09c0c9d3-0001-41f3-9cd2-9a8751358671 \
   --skill 48bbda43-4b46-4595-b9fe-160f51594aed \
   --skill 3d8e946b-d82e-4390-acf2-5437d8436b18 \
   --skill 434956ee-b8f2-4a30-976e-173b9bd2646f
