@@ -23,21 +23,21 @@ Full folder reference: load `references/vault-layout.md`.
 Check vault before reading source code:
 
 ```bash
-# 1. Check for project-specific orientation
-ls /obsidian/02-projects/
+# 1. Check for paperclip project-specific orientation
+ls /obsidian/paperclip-brain/02-projects/
 
-# 2. Read the project README if it exists
-cat /obsidian/02-projects/<project-name>/README.md
+# 2. Read the paperclip project README if it exists
+cat /obsidian/paperclip-brain/02-projects/<project-name>/README.md
 
-# 3. Check for relevant operator specs
-ls /obsidian/01-specs/
+# 3. Check for relevant operator paperclip specs
+ls /obsidian/paperclip-brain/01-specs/
 # Read any spec that matches the task topic
 
 # 4. Check for prior Reversa analysis
-ls /obsidian/03-reversa/<project-name>/ 2>/dev/null && echo "Reversa specs found"
+ls /obsidian/paperclip-brain/03-reversa/<project-name>/ 2>/dev/null && echo "Reversa specs found"
 
 # 5. Check recent agent notes for prior work on the same task
-ls /obsidian/04-agent-notes/
+ls /obsidian/paperclip-brain/04-agent-notes/
 ```
 
 Spec in `01-specs/` covering task → treat acceptance criteria as definition of done. Reversa analysis in `03-reversa/` → read module spec files before exploring raw source.
@@ -51,7 +51,7 @@ Write at meaningful milestones — phase complete, blocked, or handoff. Not ever
 ```bash
 # File path pattern:
 # /obsidian/04-agent-notes/<AgentName>/<YYYY-MM-DD>-<task-id>-<slug>.md
-NOTE_PATH="/obsidian/04-agent-notes/TecLidio/$(date +%Y-%m-%d)-CER-18-auth-analysis.md"
+NOTE_PATH="/obsidian/paperclip-brain/04-agent-notes/TecLidio/$(date +%Y-%m-%d)-CER-18-auth-analysis.md"
 
 cat > "$NOTE_PATH" << 'EOF'
 ---
@@ -84,7 +84,7 @@ None.
 EOF
 ```
 
-Full conventions: `/obsidian/04-agent-notes/_conventions.md`.
+Full conventions: `/obsidian/paperclip-brain/04-agent-notes/_conventions.md`.
 
 ---
 
@@ -94,7 +94,7 @@ After `/reversa` completes and `_reversa_sdd/` populated, copy specs into vault:
 
 ```bash
 PROJECT_NAME="voo-social-pro"
-DEST="/obsidian/03-reversa/${PROJECT_NAME}"
+DEST="/obsidian/paperclip-brain/03-reversa/${PROJECT_NAME}"
 mkdir -p "$DEST"
 cp -r _reversa_sdd/. "$DEST/"
 echo "Reversa specs copied to $DEST"
@@ -106,7 +106,7 @@ Write `type: reversa` progress note in `04-agent-notes/` pointing to new locatio
 
 ## Generating the dashboard
 
-Write result to `/obsidian/00-dashboard/status.md`:
+Write result to `/obsidian/paperclip-brain/00-dashboard/status.md`:
 
 ```bash
 # Requires PAPERCLIP_API_URL and PAPERCLIP_API_KEY to be set
@@ -119,7 +119,7 @@ ISSUES=$(curl -sf \
   "${API}/api/companies/${COMPANY_ID}/issues?status=open&limit=50")
 
 # Write dashboard (use the template below, populated with real data)
-cat > /obsidian/00-dashboard/status.md << DASHBOARD
+cat > /obsidian/paperclip-brain/00-dashboard/status.md << DASHBOARD
 ---
 date: $(date +%Y-%m-%d)
 type: dashboard
@@ -154,7 +154,7 @@ Draft spec → write to `01-specs/`:
 
 ```bash
 # Use the template as the base
-cp /obsidian/01-specs/_template.md /obsidian/01-specs/<slug>.md
+cp /obsidian/paperclip-brain/01-specs/_template.md /obsidian/paperclip-brain/01-specs/<slug>.md
 # Then edit the file with the spec content
 ```
 
