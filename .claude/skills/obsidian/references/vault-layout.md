@@ -7,7 +7,7 @@ Full reference for every folder in the obsidian vault.
 
 ---
 
-## `/obsidian/00-dashboard/`
+## `/obsidian/paperclip-brain/00-dashboard/`
 
 **Owner:** Agents write; operator reads.
 
@@ -24,7 +24,7 @@ it in Obsidian to get a quick view of what is in flight without opening the boar
 
 ---
 
-## `/obsidian/01-specs/`
+## `/obsidian/paperclip-brain/01-specs/`
 
 **Owner:** Operator writes; agents read.
 
@@ -55,7 +55,7 @@ status: draft | ready | superseded
 
 ---
 
-## `/obsidian/02-projects/`
+## `/obsidian/paperclip-brain/02-projects/`
 
 **Owner:** Both operator and agents write; both read.
 
@@ -78,7 +78,7 @@ task for that project to orient quickly without reading the codebase.
 
 ---
 
-## `/obsidian/03-reversa/`
+## `/obsidian/paperclip-brain/03-reversa/`
 
 **Owner:** Agents write; operator reads.
 
@@ -97,7 +97,7 @@ Organized by project name.
 ```
 
 **Agent behavior:** After running `/reversa` in a project workspace, copy the
-full `_reversa_sdd/` directory to `/obsidian/03-reversa/<project-name>/`. Before
+full `_reversa_sdd/` directory to `/obsidian/paperclip-brain/03-reversa/<project-name>/`. Before
 starting implementation work on a module, check here first — reading a
 `contracts.spec.md` is far cheaper than re-analyzing source code.
 
@@ -108,7 +108,7 @@ starting implementation work on a module, check here first — reading a
 
 ---
 
-## `/obsidian/04-agent-notes/`
+## `/obsidian/paperclip-brain/04-agent-notes/`
 
 **Owner:** Agents write; operator reads.
 
@@ -145,7 +145,7 @@ status: in-progress | done | blocked
 - `dashboard` — written when generating the dashboard (rarely needed as a note)
 - `analysis` — deep-dive analysis notes (architecture decisions, trade-off evaluations)
 
-**Conventions:** Read `/obsidian/04-agent-notes/_conventions.md` for the full
+**Conventions:** Read `/obsidian/paperclip-brain/04-agent-notes/_conventions.md` for the full
 note body structure by type.
 
 ---
